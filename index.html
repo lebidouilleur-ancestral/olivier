@@ -27,7 +27,13 @@
 
     <nav class="main-nav">
         <div class="container">
-            <ul>
+            <button class="hamburger" id="hamburger-btn" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul id="nav-menu">
                 <li>
                     <a href="https://www.institut-olivier-de-serres.fr/index.php">L'Institut</a>
                     <ul class="dropdown">
@@ -328,5 +334,44 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const navMenu = document.getElementById('nav-menu');
+            const parentLinks = document.querySelectorAll('.main-nav > .container > ul > li > a');
+
+            // 1. Ouvrir/Fermer le menu hamburger
+            hamburgerBtn.addEventListener('click', function() {
+                hamburgerBtn.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // 2. Gérer les sous-menus en version mobile (accordéons)
+            parentLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Vérifie si on est sur mobile
+                    if (window.innerWidth <= 768) {
+                        const dropdown = this.nextElementSibling;
+                        // S'il y a un sous-menu sous ce lien
+                        if (dropdown && dropdown.classList.contains('dropdown')) {
+                            e.preventDefault(); // Empêche d'aller sur la page directement pour ouvrir le menu à la place
+                            
+                            // Ferme les autres sous-menus (optionnel, pour faire un vrai accordéon)
+                            document.querySelectorAll('.dropdown').forEach(drop => {
+                                if(drop !== dropdown) drop.classList.remove('open');
+                            });
+                            document.querySelectorAll('.main-nav > .container > ul > li > a').forEach(l => {
+                                if(l !== this) l.classList.remove('submenu-open');
+                            });
+
+                            // Ouvre ou ferme le sous-menu cliqué
+                            dropdown.classList.toggle('open');
+                            this.classList.toggle('submenu-open');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
