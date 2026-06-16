@@ -90,6 +90,10 @@ a:hover {
     object-fit: contain;
 }
 
+.hamburger {
+    display: none;
+}
+
 /* ==========================================================================
    Navigation Principale
    ========================================================================== */
@@ -340,10 +344,65 @@ img {
         margin-bottom: 1.5rem;
     }
 
-    /* Navigation Mobile (Menu vertical, adapté au tactile) */
-    .main-nav .container > ul {
+    
+    
+    /* Indicateur de sous-menu pour mobile (via pseudo-element css) */
+    .main-nav > .container > ul > li > a::after {
+        content: '▼';
+        font-size: 0.7rem;
+        opacity: 0.7;
+    }
+
+/* --- NOUVELLE NAVIGATION MOBILE (Hamburger) --- */
+    .main-nav .container {
+        display: flex;
+        justify-content: flex-end; /* Aligne le bouton hamburger à droite */
+        align-items: center;
+        padding: 10px 0; 
+    }
+
+    /* Style du bouton Hamburger */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 35px;
+        height: 25px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 101;
+        margin-right: 10px;
+    }
+
+    .hamburger span {
+        width: 100%;
+        height: 3px;
+        background: var(--color-white);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    /* Animation du hamburger en croix quand il est ouvert */
+    .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(40deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-40deg); }
+
+    /* Le menu principal (masqué par défaut, s'affiche en superposition) */
+    .main-nav > .container > ul {
+        display: none; /* Masqué par défaut */
         flex-direction: column;
         width: 100%;
+        position: absolute;
+        top: 100%; /* S'attache juste en dessous de la barre de navigation */
+        left: 0;
+        background-color: var(--color-primary);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* Classe active pour afficher le menu principal */
+    .main-nav > .container > ul.active {
+        display: flex;
     }
     
     .main-nav li {
@@ -359,14 +418,25 @@ img {
         align-items: center;
     }
     
-    /* Indicateur de sous-menu pour mobile (via pseudo-element css) */
+    /* Indicateur de sous-menu (la petite flèche) */
     .main-nav > .container > ul > li > a::after {
         content: '▼';
         font-size: 0.7rem;
         opacity: 0.7;
+        transition: transform 0.3s ease;
     }
 
-    /* Le sous-menu s'ouvre statiquement (pousse le contenu) sur mobile au clic (hover sur iOS) */
+    /* Rotation de la flèche quand le sous-menu est ouvert */
+    .main-nav > .container > ul > li > a.submenu-open::after {
+        transform: rotate(180deg);
+    }
+
+    /* Remplacement du survol (:hover) par un déclenchement au clic sur mobile */
+    .main-nav li:hover > .dropdown {
+        display: none; /* Désactive l'ouverture auto qui bug sur tactile */
+    }
+
+    /* Les sous-menus (masqués par défaut) */
     .dropdown {
         position: static;
         width: 100%;
@@ -375,11 +445,17 @@ img {
         border-radius: 0;
         background-color: var(--color-primary-light);
         padding: 0;
+        display: none; 
+    }
+
+    /* Classe pour ouvrir le sous-menu via Javascript */
+    .dropdown.open {
+        display: block;
     }
     
     .dropdown li a {
         color: var(--color-white);
-        padding: 0.8rem 1.5rem 0.8rem 2.5rem; /* Indentation pour montrer la hiérarchie */
+        padding: 0.8rem 1.5rem 0.8rem 2.5rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
