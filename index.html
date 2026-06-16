@@ -341,22 +341,25 @@
             const parentLinks = document.querySelectorAll('.main-nav > .container > ul > li > a');
 
             // 1. Ouvrir/Fermer le menu hamburger
-            hamburgerBtn.addEventListener('click', function() {
+            hamburgerBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
                 hamburgerBtn.classList.toggle('active');
                 navMenu.classList.toggle('active');
             });
 
-            // 2. Gérer les sous-menus en version mobile (accordéons)
+            // 2. Gérer les sous-menus en version mobile
             parentLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     // Vérifie si on est sur mobile
                     if (window.innerWidth <= 768) {
                         const dropdown = this.nextElementSibling;
+                        
                         // S'il y a un sous-menu sous ce lien
                         if (dropdown && dropdown.classList.contains('dropdown')) {
-                            e.preventDefault(); // Empêche d'aller sur la page directement pour ouvrir le menu à la place
-                            
-                            // Ferme les autres sous-menus (optionnel, pour faire un vrai accordéon)
+                            e.preventDefault(); // Empêche la navigation immédiate
+                            e.stopPropagation(); // Empêche le clic de se propager ailleurs
+
+                            // Ferme les autres sous-menus ouverts
                             document.querySelectorAll('.dropdown').forEach(drop => {
                                 if(drop !== dropdown) drop.classList.remove('open');
                             });
@@ -364,12 +367,22 @@
                                 if(l !== this) l.classList.remove('submenu-open');
                             });
 
-                            // Ouvre ou ferme le sous-menu cliqué
+                            // Alterne l'affichage du sous-menu cliqué
                             dropdown.classList.toggle('open');
                             this.classList.toggle('submenu-open');
                         }
                     }
                 });
+            });
+
+            // Fermer le menu si on clique complètement en dehors
+            document.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    hamburgerBtn.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.querySelectorAll('.dropdown').forEach(drop => drop.classList.remove('open'));
+                    document.querySelectorAll('.submenu-open').forEach(l => l.classList.remove('submenu-open'));
+                }
             });
         });
     </script>
