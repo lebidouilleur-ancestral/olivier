@@ -385,6 +385,58 @@
                 }
             });
         });
+
+        // --- SCRIPT OPTION 1 : ACCORDÉON MOBILE ---
+            if (window.innerWidth <= 768) {
+                const cards = document.querySelectorAll('.card');
+                
+                cards.forEach((card, index) => {
+                    // On laisse la toute première carte ouverte par défaut
+                    if (index === 0) return;
+
+                    // Cherche le titre principal de la carte
+                    const titleEl = card.querySelector('h1, h2, h3');
+                    let titleText = titleEl ? titleEl.innerText : "En savoir plus";
+
+                    // On "nettoie" le texte si nécessaire (enlève les "i" des médaillons)
+                    if (titleText.length > 50) titleText = titleText.substring(0, 50) + "...";
+
+                    // 1. On crée une div qui va contenir tout le texte original
+                    const contentWrapper = document.createElement('div');
+                    contentWrapper.className = 'card-content-wrapper';
+                    while(card.firstChild) { 
+                        contentWrapper.appendChild(card.firstChild); 
+                    }
+
+                    // 2. On crée la barre cliquable
+                    const headerBar = document.createElement('div');
+                    headerBar.className = 'card-title-bar';
+                    headerBar.innerHTML = `<span>${titleText}</span><span class="toggle-icon">+</span>`;
+
+                    // 3. On remet le tout dans la carte
+                    card.appendChild(headerBar);
+                    card.appendChild(contentWrapper);
+                    card.classList.add('accordion-mode');
+
+                    // 4. L'action du clic
+                    headerBar.addEventListener('click', () => {
+                        // Ferme toutes les autres cartes (optionnel, supprimez ces 3 lignes si vous voulez permettre d'en ouvrir plusieurs)
+                        document.querySelectorAll('.card.accordion-mode').forEach(c => {
+                            if(c !== card) c.classList.remove('open');
+                        });
+                        
+                        // Ouvre/ferme la carte cliquée
+                        card.classList.toggle('open');
+                        
+                        // Fait défiler légèrement l'écran vers la carte ouverte
+                        if (card.classList.contains('open')) {
+                            setTimeout(() => {
+                                card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }, 50);
+                        }
+                    });
+                });
+            }
     </script>
 </body>
 </html>
