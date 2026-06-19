@@ -21,12 +21,21 @@
     --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
     --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.08);
     --radius-card: 12px;
+
+    /* Nouvelles variables pour les améliorations visuelles */
+    --color-accent-soft: rgba(184, 134, 11, 0.15);
+    --transition-base: 0.3s ease;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-color: var(--color-accent) var(--color-secondary); /* Firefox */
 }
 
 body {
@@ -36,6 +45,36 @@ body {
     line-height: 1.7;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
+}
+
+/* Sélection de texte aux couleurs de la charte */
+::selection {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+/* Barre de défilement personnalisée (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-secondary);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-accent);
+    border-radius: 10px;
+    border: 3px solid var(--color-secondary);
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-accent-hover);
+}
+
+/* Accessibilité : un focus clavier toujours visible */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
 }
 
 .container {
@@ -65,6 +104,24 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 p { margin-bottom: 1.2rem; }
 ul { list-style-position: outside; margin-bottom: 1.2rem; margin-left: 1.5rem; }
 li { margin-bottom: 0.5rem; }
+
+/* Lettrine façon "édition ancienne" : clin d'œil aux éditions historiques
+   du Théâtre d'Agriculture. Cible le 4e bloc de la colonne principale
+   (la carte "Le Théâtre d'agriculture et mesnage des champs"), qui ne
+   contient pas d'image flottante en conflit. */
+.content-column > .card:nth-child(4) > p:first-of-type::first-letter {
+    font-family: var(--font-title);
+    font-size: 3.6rem;
+    font-weight: 700;
+    line-height: 0.85;
+    float: left;
+    margin: 0.05em 0.15em 0 0;
+    padding: 0.1em 0.2em;
+    color: var(--color-white);
+    background: linear-gradient(155deg, var(--color-primary), var(--color-primary-light));
+    border-radius: 6px;
+    box-shadow: var(--shadow-soft);
+}
 
 a {
     color: var(--color-accent);
@@ -124,6 +181,7 @@ a:hover {
 
 .main-nav > .container > ul > li > a {
     display: block;
+    position: relative;
     color: var(--color-white);
     padding: 1.2rem 1.5rem;
     font-family: var(--font-title);
@@ -133,6 +191,24 @@ a:hover {
     transition: background-color 0.3s ease;
 }
 
+/* Petit filet doré qui se déploie sous le lien actif (desktop uniquement) */
+.main-nav > .container > ul > li > a::before {
+    content: '';
+    position: absolute;
+    bottom: 0.4rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 2px;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.main-nav li:hover > a::before {
+    transform: scaleX(1);
+}
+
 .main-nav li:hover > a {
     background-color: var(--color-primary-light);
     text-decoration: none;
@@ -140,7 +216,7 @@ a:hover {
 
 /* Menu Déroulant (Desktop) */
 .dropdown {
-    display: none;
+    display: block;
     position: absolute;
     top: 100%;
     left: 0;
@@ -153,6 +229,11 @@ a:hover {
     box-shadow: var(--shadow-hover);
     border-radius: 0 0 8px 8px;
     margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
 }
 
 .dropdown li a {
@@ -171,7 +252,10 @@ a:hover {
 }
 
 .main-nav li:hover > .dropdown {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
 /* ==========================================================================
@@ -238,6 +322,28 @@ a:hover {
     font-weight: bold;
 }
 
+/* Distinction visuelle entre les événements passés et à venir, dans la
+   carte "Actualités" : le 1er bloc <h3> de la carte est l'année passée,
+   le 2nd l'année en cours / à venir. */
+.sidebar-column .card h3:nth-of-type(1) + ul li {
+    opacity: 0.65;
+}
+.sidebar-column .card h3:nth-of-type(1) + ul li::before {
+    content: '✓';
+    color: var(--color-primary-light);
+}
+
+.sidebar-column .card h3:nth-of-type(2) + ul li::before {
+    font-weight: 900;
+}
+
+/* Mise en valeur de l'encart "Cotisations" (ciblé via son style inline
+   border-radius: 5px, unique à ce bloc) */
+div[style*="border-radius: 5px"] {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-bg)) !important;
+    border-left: 4px solid var(--color-accent);
+}
+
 /* ==========================================================================
    Cartes (Cards) - Le coeur du design
    ========================================================================== */
@@ -248,16 +354,29 @@ a:hover {
     padding: 3rem; /* Plus d'espace interne pour laisser respirer le texte */
     margin-bottom: 2.5rem;
     box-shadow: 0 10px 40px rgba(42, 75, 58, 0.06); /* Ombre teintée en vert, plus douce et diffuse */
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
-}
-
-.card:hover {
-    box-shadow: 0 15px 50px rgba(42, 75, 58, 0.12);
-    transform: translateY(-5px);
+    position: relative;
+    overflow: hidden;
+    border-top: 3px solid transparent;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .card > *:last-child {
     margin-bottom: 0;
+}
+
+/* L'effet de survol (lever la carte) n'est appliqué que sur les écrans
+   pilotés à la souris : on évite ainsi l'effet "collé" au doigt sur tactile. */
+@media (hover: hover) and (pointer: fine) {
+    .card:hover {
+        box-shadow: 0 15px 50px rgba(42, 75, 58, 0.12);
+        transform: translateY(-5px);
+        border-top-color: var(--color-accent);
+    }
+
+    /* Léger zoom de l'image principale quand on survole toute la carte */
+    .card:hover .full-width-image {
+        transform: scale(1.035);
+    }
 }
 
 /* ==========================================================================
@@ -273,16 +392,31 @@ img {
     float: left;
     margin: 0.5rem 1.5rem 1rem 0;
     max-width: 150px;
+    border: 4px solid var(--color-white);
+    box-shadow: var(--shadow-soft);
 }
 
 .float-right {
     float: right;
     margin: 0.5rem 0 1rem 1.5rem;
     max-width: 150px;
+    border: 4px solid var(--color-white);
+    box-shadow: var(--shadow-soft);
 }
 
 .small-img { max-width: 120px; }
-.full-width-image { width: 100%; margin-bottom: 1.5rem; }
+.full-width-image {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Anneau doré discret autour des petits médaillons décoratifs (icônes "i") */
+img[style*="border-radius: 50%"] {
+    border: 2px solid var(--color-accent);
+    padding: 2px;
+    background-color: var(--color-white);
+}
 
 .signature {
     text-align: right;
@@ -303,6 +437,7 @@ img {
 
 .button {
     display: inline-block;
+    position: relative;
     background-color: var(--color-primary);
     color: var(--color-white);
     padding: 0.8rem 1.8rem;
@@ -315,6 +450,21 @@ img {
     font-size: 0.85rem;
     letter-spacing: 1px;
     padding: 1rem 2rem;
+}
+
+/* Petite flèche qui glisse à l'apparition au survol */
+.button::after {
+    content: '→';
+    display: inline-block;
+    margin-left: 0.6rem;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover::after {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .button:hover {
@@ -331,6 +481,8 @@ img {
    ========================================================================== */
 .site-footer {
     background-color: var(--color-primary);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cpath d='M70 25 C50 45, 50 95, 70 115 C90 95, 90 45, 70 25Z M70 50 L70 115 M70 70 L55 60 M70 80 L85 70' fill='none' stroke='%23EAE0D1' stroke-width='1' opacity='0.05'/%3E%3C/svg%3E");
+    background-repeat: repeat;
     color: var(--color-secondary);
     padding: 3rem 0;
     text-align: center;
@@ -454,13 +606,6 @@ img {
         color: #d9534f; /* Optionnel : devient rouge pour fermer */
     }
     
-    /* Indicateur de sous-menu pour mobile (via pseudo-element css) */
-    .main-nav > .container > ul > li > a::after {
-        content: '▼';
-        font-size: 0.7rem;
-        opacity: 0.7;
-    }
-
 /* --- NOUVELLE NAVIGATION MOBILE (Hamburger) --- */
     .main-nav .container {
         display: flex;
@@ -526,17 +671,22 @@ img {
         align-items: center;
     }
     
-    /* Indicateur de sous-menu (la petite flèche) */
+    /* Indicateur de sous-menu (chevron dessiné en CSS, plus fin qu'un caractère ▼) */
     .main-nav > .container > ul > li > a::after {
-        content: '▼';
-        font-size: 0.7rem;
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid var(--color-white);
+        border-bottom: 2px solid var(--color-white);
         opacity: 0.7;
+        transform: rotate(45deg);
         transition: transform 0.3s ease;
+        margin-left: 0.5rem;
     }
 
-    /* Rotation de la flèche quand le sous-menu est ouvert */
+    /* Rotation du chevron quand le sous-menu est ouvert */
     .main-nav > .container > ul > li > a.submenu-open::after {
-        transform: rotate(180deg);
+        transform: rotate(225deg);
     }
 
     /* Remplacement du survol (:hover) par un déclenchement au clic sur mobile */
@@ -610,5 +760,19 @@ img {
     .footer-links, .footer-actions {
         flex-direction: column;
         gap: 0.8rem;
+    }
+}
+
+/* ==========================================================================
+   Confort de lecture : respect de la préférence "mouvement réduit"
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    html {
+        scroll-behavior: auto;
     }
 }
