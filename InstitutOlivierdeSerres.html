@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les archives de l'Institut Olivier de Serres</title>
+    <meta name="Author" content="vidalbernard@orange.fr">
+    <meta name="Description" content="Olivier, Serres, biographie, oeuvre, editions, Theatre, Agriculture, Institut, Olivier de Serres.">
+    <link rel="shortcut icon" href="https://www.institut-olivier-de-serres.fr/logo/medaillon2.ico">
+    
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="Institut Olivier de Serres_files/style.css">
+
+    <!-- Styles spécifiques pour la base de données d'archives -->
+    <style>
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-soft);
+        }
+        .archive-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            background-color: var(--color-white);
+        }
+        .archive-table th {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            font-family: var(--font-title);
+            font-weight: 700;
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 3px solid var(--color-accent);
+        }
+        .archive-table td {
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--color-border);
+            color: var(--color-text);
+            text-align: left;
+        }
+        .archive-table tr:nth-child(even) {
+            background-color: rgba(234, 224, 209, 0.15); /* Légère teinte sable */
+        }
+        .archive-table tr:hover {
+            background-color: rgba(184, 134, 11, 0.08); /* Effet de survol ocre doux */
+        }
+        .archive-table td.year {
+            font-weight: 700;
+            color: var(--color-accent);
+            width: 80px;
+            white-space: nowrap;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, var(--color-secondary), var(--color-bg));
+            border-left: 4px solid var(--color-accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="https://www.institut-olivier-de-serres.fr/index.php">
+                <img src="./Institut Olivier de Serres_files/bandeau2.png" alt="Bandeau Institut Olivier de Serres" class="header-banner">
+            </a>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <button class="hamburger" id="hamburger-btn" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul id="nav-menu">
+                <li>
+                    <a href="https://www.institut-olivier-de-serres.fr/index.php">L'Institut</a>
+                    <ul class="dropdown">
+                        <li><a href="https://www.institut-olivier-de-serres.fr/index.php">Actualités Institut</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/Adherents/re1ser2ve4.php">Adhérents</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/base%20mini.php">Nos archives aperçu</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/Etudes_historiques.php">Nos études aperçu</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/Documents/Adhesion.pdf">Adhérer</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/Documents/Bon%20Commande%202021.pdf">Commander</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="https://www.institut-olivier-de-serres.fr/Agronome.php">Olivier de Serres</a>
+                    <ul class="dropdown">
+                        <li><a href="https://www.institut-olivier-de-serres.fr/Agronome.php">L'agronome</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/Ecrivain.php">L'écrivain et le philosophe</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/Ingenieur.php">L'ingénieur</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/jean.php">Jean de Serres</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/genealogie.php">Généalogie des Serres</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/bibliographie.php">Bibliographie</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="https://www.institut-olivier-de-serres.fr/pradel.php">Le domaine du Pradel</a>
+                     <ul class="dropdown">
+                        <li><a href="https://www.institut-olivier-de-serres.fr/pradel.php">Domaine du Pradel</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/irrigation/Gazel.php">Pradel irrigation</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/jardins/jardins.php">Jardins du Pradel</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/villeneuve.php">Villeneuve-de-Berg</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="https://www.institut-olivier-de-serres.fr/theatre.php">Le Théâtre d'Agriculture</a>
+                    <ul class="dropdown">
+                        <li><a href="https://www.institut-olivier-de-serres.fr/theatre.php">Théâtre</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/8lieu.php">Les éditions du théâtre</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/theatre1.php">La 23eme édition</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/Frontispices/Frontispices.php">Frontispices</a></li>
+                        <li><a href="https://www.institut-olivier-de-serres.fr/Bois8Lieux.php">8 lieux</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="main-content">
+            
+            <!-- COLONNE DE GAUCHE : CONTENU PRINCIPAL -->
+            <article class="content-column">
+                
+                <section class="card">
+                    <h1>Les archives de l'Institut Olivier-de-Serres</h1>
+                    <p class="subtitle" style="font-size: 1.2rem; font-weight: bold; color: var(--color-primary-light); margin-bottom: 1.5rem;">Aperçu de l'intégralité de la base</p>
+                    
+                    <h2>Description et accès</h2>
+                    <p>À la demande de l'Institut Olivier-de-Serres, un très important travail de collecte d'archives et de transcription a été réalisé sur 13 ans, entre 1995 et 2008, par Alain Saint André, paléographe professionnel.</p>
+                    <p>Celui-ci a collecté et transcrit de nombreux documents anciens relatifs à Olivier de Serres et à son domaine du Pradel, issus des archives départementales et nationales (ADA, ADG, ADD, SHPF, BNF...).</p>
+                    <p>Ce travail a été complété, poursuivi et mis en ligne dans notre base de données informatique par Bernard Vidal, de 2010 à 2024.</p>
+                    
+                    <div class="highlight-box">
+                        <p style="margin-bottom: 0.5rem;"><strong>Accès réservé :</strong> L’accès à notre base de données est réservé aux adhérents de l’association, aux fins d’un usage strictement privé.</p>
+                        <p style="margin-bottom: 0;">Pour un usage de recherche, outre un argumentaire sur votre projet, l’association demande une adhésion ainsi que la signature d’une convention fixant les conditions de l’utilisation et de publication des résultats (fourniture des résultats de recherche, conférence).</p>
+                    </div>
+
+                    <div class="button-group">
+                        <a href="mailto:institutolivierdeserres@gmail.com" class="button">Contacter l'Institut par mail</a>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>Enrichir la base</h2>
+                    <p>Vous venez de transcrire l'un de ces documents ou de repérer des erreurs ? Merci de nous en communiquer le contenu. Vous possédez ou connaissez d'autres documents inédits ? Ils méritent de figurer dans notre base.</p>
+                    <div class="button-group">
+                        <a href="mailto:vidalbernard@orange.fr" class="button">Contacter le Webmestre</a>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>Notre base de données d'archives</h2>
+                    <p>Nous avons actuellement <strong>538 enregistrements</strong> répertoriés dans notre base de données. Voici l'aperçu chronologique de l'intégralité de la base :</p>
+                    
+                    <div class="table-responsive">
+                        <table class="archive-table">
+                            <thead>
+                                <tr>
+                                    <th>Année</th>
+                                    <th>Titre du document</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="year">1313</td><td>Accords moulins de la Valette de Vernède et de Berg, sur la claduègne</td></tr>
+                                <tr><td class="year">1314</td><td>Création du moulin de Pierregourde</td></tr>
+                                <tr><td class="year">1348</td><td>Testament de Pierre de Serres en faveur de son frère, Martin</td></tr>
+                                <tr><td class="year">1404</td><td>Sieur Comte acquiert le Pradel</td></tr>
+                                <tr><td class="year">1408</td><td>Anne de la Gorce épousa Béraud. Transmission du Pradel</td></tr>
+                                <tr><td class="year">1452</td><td>Transmission du Pradel</td></tr>
+                                <tr><td class="year">1459</td><td>Confronts sur Mirabel</td></tr>
+                                <tr><td class="year">1460</td><td>Une Maison à Villeneuve au nom de Jacques de Serres</td></tr>
+                                <tr><td class="year">1464</td><td>Histoire des moulins Brialas</td></tr>
+                                <tr><td class="year">1464</td><td>Investiture et nouveaux accencements faits par noble Gabriel d'Arlempde.</td></tr>
+                                <tr><td class="year">1486</td><td>Vente du chateau de Mirabel à noble Joachim des Astars</td></tr>
+                                <tr><td class="year">1493</td><td>le Pradel passe dans la famille villeneuvoise des Pastel.</td></tr>
+                                <tr><td class="year">1496</td><td>Joachim des Astars prend possession de sa coseigneurie de Mirabel, comprenant Le Pradel et Brialas</td></tr>
+                                <tr><td class="year">1525</td><td>Antoine de Serres épousa Jeanne Brun, elle meurt prématurément en 1525.</td></tr>
+                                <tr><td class="year">1531</td><td>Homonyme d'Olivier de Serres.</td></tr>
+                                <tr><td class="year">1532</td><td>Contrat de mariage de Jacques de Serre et Louise de Leyris</td></tr>
+                                <tr><td class="year">1532</td><td>Jacques II de Serres fut associé, à partir de 1527, au commerce paternel.</td></tr>
+                                <tr><td class="year">1533</td><td>Jacques des Serres est élu consul de Villeneuve</td></tr>
+                                <tr><td class="year">1535</td><td>Les Chalendars, lieutenants des Baillis du Vivarais de 1535 à 1640</td></tr>
+                                <tr><td class="year">1537</td><td>Homonymie Marie de Serres</td></tr>
+                                <tr><td class="year">1539</td><td>Naissance d'Olivier de Serres</td></tr>
+                                <tr><td class="year">1540</td><td>Naissance de Jean de Serres, pasteur et historiographe.</td></tr>
+                                <tr><td class="year">1541</td><td>Jacques de Serres est recteur de l'hospice.</td></tr>
+                                <tr><td class="year">1541</td><td>Homonymie. Arrentement de Pastel à Olivier de Serres d'un bien à Villeneuve de Berg</td></tr>
+                                <tr><td class="year">1543</td><td>Jacques de Serres hérite de son père Antoine, marchand à Villeneuve</td></tr>
+                                <tr><td class="year">1544</td><td>Procès de Laudun contre Pastel du Pradel</td></tr>
+                                <tr><td class="year">1545</td><td>Allégeance de Jehan Pastel</td></tr>
+                                <tr><td class="year">1545</td><td>Jacques de Serres n'était pas propriétaire du Pradel, acheté par son fils Olivier en 1558</td></tr>
+                                <tr><td class="year">1546</td><td>Homonymie. Donation d'une terre laborive à la Vignasse par Olivier de Serres (Homonymie avec cousin de l’agronome)</td></tr>
+                                <tr><td class="year">1546</td><td>Papiers de la famille des Serres du Pradel</td></tr>
+                                <tr><td class="year">1546</td><td>Testament de Jacques de Serres.</td></tr>
+                                <tr><td class="year">1547</td><td>Don G de la Motte à Louise de Leyris, veuve de Jacques des Serres et à Olivier des Serres</td></tr>
+                                <tr><td class="year">1549</td><td>Reconnaissance d'Olivier de Leyris, au nom de Guillaume Marron, à Charles de Tournon</td></tr>
+                                <tr><td class="year">1550</td><td>Les notaires d’Orange susceptibles d’avoir eu pour client Jean de Serre et éventuellement Olivier des Serres</td></tr>
+                                <tr><td class="year">1551</td><td>Vente du Pradel par Jean Pastel à Antoine de Geys de Pampelonne.</td></tr>
+                                <tr><td class="year">1555</td><td>Testament de Jacques Arcons 13 avril 1555</td></tr>
+                                <tr><td class="year">1557</td><td>Vente du Pradel par Jean Pastel à M. de Pampelonne</td></tr>
+                                <tr><td class="year">1557</td><td>Olivier de Leyris testa en faveur de sa femme</td></tr>
+                                <tr><td class="year">1558</td><td>Quittance par Antoine de Surville à Olivier de Serres, pour payement lods.</td></tr>
+                                <tr><td class="year">1558</td><td>Mémoire pour Daniel Dupradel, acquisition du Pradel par Olivier de Serres.</td></tr>
+                                <tr><td class="year">1559</td><td>Contrat de mariage d'Olivier des Serres avec Marguerite d'Arcons</td></tr>
+                                <tr><td class="year">1561</td><td>Olivier de Serres diacre au consistoire de Villeneuve</td></tr>
+                                <tr><td class="year">1561</td><td>Lettre de Jean de Serres aux régents d'Aubenas</td></tr>
+                                <tr><td class="year">1561</td><td>Lettre à Calvin par Pierre Baratier beau-frere d'Olivier de Serres à Montelimar</td></tr>
+                                <tr><td class="year">1562</td><td>Recommandation du pasteur Jacques Chapel de Privas</td></tr>
+                                <tr><td class="year">1562</td><td>Inventaire des vases sacrés confiés à Olivier de Serres</td></tr>
+                                <tr><td class="year">1562</td><td>Restitution des vases sacrés</td></tr>
+                                <tr><td class="year">1562</td><td>Mission à Genève pour chercher le pasteur Beton</td></tr>
+                                <tr><td class="year">1562</td><td>Quittance du consistoire pour les dépenses du pasteur Beton</td></tr>
+                                <tr><td class="year">1562</td><td>Ordonnance de Charles IX</td></tr>
+                                <tr><td class="year">1562</td><td>Le pasteur Beton ou Besson</td></tr>
+                                <tr><td class="year">1562</td><td>Dépenses faites par Olivier de Serres pour le consistoire de Villeneuve-de-Berg 1562</td></tr>
+                                <tr><td class="year">1562</td><td>Revenus des bénéfices comunauté huguenots Villeneuve</td></tr>
+                                <tr><td class="year">1563</td><td>Famille de Louise de Leyris</td></tr>
+                                <tr><td class="year">1564</td><td>Les divers moulins autour du Pradel</td></tr>
+                                <tr><td class="year">1564</td><td>Mariage de Raymond, frère d'Olivier de Serres</td></tr>
+                                <tr><td class="year">1564</td><td>Droit de prendre l’eau du ruisseau de Gazel</td></tr>
+                                <tr><td class="year">1564</td><td>Lettre de Besson à Colladon</td></tr>
+                                <tr><td class="year">1565</td><td>Olivier de Serres Jaumette de Grace</td></tr>
+                                <tr><td class="year">1565</td><td>Olivier de Serres contre Louis Flocard</td></tr>
+                                <tr><td class="year">1565</td><td>Olivier des Serres contre les hoirs de Guilhaume Marrona</td></tr>
+                                <tr><td class="year">1565</td><td>Olivier de Serres contre les hoirs Chastel</td></tr>
+                                <tr><td class="year">1566</td><td>Conflit sur le payement de l'impot à Olivier de Serres</td></tr>
+                                <tr><td class="year">1566</td><td>Constrainte de Olivier de Serres contre Alzas (ou Alyas)</td></tr>
+                                <tr><td class="year">1566</td><td>Arrêt du Conseil du Roi Joyaux de l'église</td></tr>
+                                <tr><td class="year">1567</td><td>Deuxième testament de Jacques d'Arcons, beau père d'Olivier des Serres</td></tr>
+                                <tr><td class="year">1568</td><td>L'emprunt forcé de 1568 sur les protestants du Vivarais</td></tr>
+                                <tr><td class="year">1569</td><td>Mariage de Jean de Serres</td></tr>
+                                <tr><td class="year">1571</td><td>Acquisition du Pradel</td></tr>
+                                <tr><td class="year">1571</td><td>Affranchissement de la juridiction du Pradel</td></tr>
+                                <tr><td class="year">1572</td><td>Saint Barthelemy et troubles à Villeneuve de Berg</td></tr>
+                                <tr><td class="year">1572</td><td>Arrentement du Pradel à Chaussy</td></tr>
+                                <tr><td class="year">1572</td><td>Baron rançonne les habitants de Villeneuve et Jean de Serres greffier.</td></tr>
+                                <tr><td class="year">1573</td><td>La prise de Villeneuve de Berg</td></tr>
+                                <tr><td class="year">1573</td><td>Quittance dans la demeure Chaussy</td></tr>
+                                <tr><td class="year">1573</td><td>Homonymie</td></tr>
+                                <tr><td class="year">1573</td><td>Reçu par Olivier de Serres</td></tr>
+                                <tr><td class="year">1574</td><td>Capitaine Dupradel</td></tr>
+                                <tr><td class="year">1575</td><td>Testament réciproque Olivier de Leyris, Ysabel de Marron</td></tr>
+                                <tr><td class="year">1576</td><td>Paix de La Borie. Trêve des labourages</td></tr>
+                                <tr><td class="year">1577</td><td>Arrentement des dimes de Villeneuve et de St-Germain</td></tr>
+                                <tr><td class="year">1578</td><td>Recommandation de Jean de Serres par Théodore de Bèze</td></tr>
+                                <tr><td class="year">1578</td><td>Installation au Pradel</td></tr>
+                                <tr><td class="year">1578</td><td>Jean des Serres éditeur des œuvres de Platon</td></tr>
+                                <tr><td class="year">1579</td><td>Compoix de Villeneuve de Berg</td></tr>
+                                <tr><td class="year">1579</td><td>lettre de Henri IV sur Jean de Serres</td></tr>
+                                <tr><td class="year">1580</td><td>Garnison garde des biens des réformés</td></tr>
+                                <tr><td class="year">1580</td><td>Garnison au Pradel</td></tr>
+                                <tr><td class="year">1580</td><td>lettre de Jean de Serres (le pasteur) au roi</td></tr>
+                                <tr><td class="year">1580</td><td>Payement et solde de quatre soldats au Pradel</td></tr>
+                                <tr><td class="year">1580</td><td>Collège Nimes</td></tr>
+                                <tr><td class="year">1581</td><td>Payement de Jean à Olivier de Serres</td></tr>
+                                <tr><td class="year">1581</td><td>Quittances Olivier de Serres Roux Chaussy</td></tr>
+                                <tr><td class="year">1582</td><td>Jugement pour Olivier de Serres / Chaussy sur la prise d'eau du Gazel</td></tr>
+                                <tr><td class="year">1582</td><td>Reconnaissance terre de Cheylus</td></tr>
+                                <tr><td class="year">1582</td><td>Commission pour le démentèlement des chateaux.</td></tr>
+                                <tr><td class="year">1582</td><td>Collège Nimes Statuts</td></tr>
+                                <tr><td class="year">1582</td><td>Statuts collège Nimes par Jean de Serres</td></tr>
+                                <tr><td class="year">1583</td><td>Reçus Jean de Serres</td></tr>
+                                <tr><td class="year">1583</td><td>Accord pour l'eau de la rivière Gazel</td></tr>
+                                <tr><td class="year">1583</td><td>Troubles religion Nimes</td></tr>
+                                <tr><td class="year">1584</td><td>Testament de dlle Ysabel de Marron</td></tr>
+                                <tr><td class="year">1584</td><td>Biens de la famille de Leyris</td></tr>
+                                <tr><td class="year">1584</td><td>Compoix de Mirabel, Moulins</td></tr>
+                                <tr><td class="year">1584</td><td>Biens de la famille Leyris Annotations d'Olivier de Serres</td></tr>
+                                <tr><td class="year">1585</td><td>Bail par Isabelle de Marron</td></tr>
+                                <tr><td class="year">1585</td><td>Assemblées des protestants et des catholiques unis.</td></tr>
+                                <tr><td class="year">1586</td><td>Quittance relative à l'emprisonnement à Lyon de Daniel de Serres</td></tr>
+                                <tr><td class="year">1587</td><td>Trève au Pradel</td></tr>
+                                <tr><td class="year">1587</td><td>Jean de Serres à Oranges</td></tr>
+                                <tr><td class="year">1587</td><td>Trève au Pradel</td></tr>
+                                <tr><td class="year">1587</td><td>Lettre d'Olivier de Serres à M de Fayn</td></tr>
+                                <tr><td class="year">1587</td><td>Requêtes de M. de Saint-Ferréol, demandant 5 pionniers et des vivres</td></tr>
+                                <tr><td class="year">1587</td><td>Homonymie</td></tr>
+                                <tr><td class="year">1587</td><td>Rupture de la trève le jour de Noel</td></tr>
+                                <tr><td class="year">1588</td><td>Trève au Pradel</td></tr>
+                                <tr><td class="year">1588</td><td>Délibérations des États du Vivarais</td></tr>
+                                <tr><td class="year">1588</td><td>Trève au Pradel</td></tr>
+                                <tr><td class="year">1588</td><td>Rencontre pour la paix</td></tr>
+                                <tr><td class="year">1589</td><td>Diplôme en droit Daniel de Serres</td></tr>
+                                <tr><td class="year">1589</td><td>Naissance et baptème de Jacques de Serres fils D'Olivier</td></tr>
+                                <tr><td class="year">1589</td><td>Conférences pour la paix 1589 1590 1591 1592</td></tr>
+                                <tr><td class="year">1589</td><td>Dette de Dauphine de Serres, épouse Baratier, à Jean de Serres</td></tr>
+                                <tr><td class="year">1590</td><td>Testament de Ysabel de Marron</td></tr>
+                                <tr><td class="year">1590</td><td>Daniel des Serres, avocat à Villeneuve de Berg</td></tr>
+                                <tr><td class="year">1590</td><td>Elargissement de la main de Daniel</td></tr>
+                                <tr><td class="year">1590</td><td>Olivier de Serres achète un pré à Firmin Chaussy</td></tr>
+                                <tr><td class="year">1591</td><td>Treve au Pradel</td></tr>
+                                <tr><td class="year">1591</td><td>Compromis entre St Féréol et du Pradel</td></tr>
+                                <tr><td class="year">1591</td><td>Verbal pour les sieur de St Féréol et du Pradel</td></tr>
+                                <tr><td class="year">1591</td><td>Accords Olivier et Jean de Serres concernant l’héritage de Leyris.</td></tr>
+                                <tr><td class="year">1591</td><td>Voyage de Jean de Serres à Montpellier.</td></tr>
+                                <tr><td class="year">1591</td><td>Lettre d'Olivier de Serres à M de Fayn</td></tr>
+                                <tr><td class="year">1591</td><td>Montréal coup de main contre le Pradel</td></tr>
+                                <tr><td class="year">1591</td><td>Feuillets divers arrachés</td></tr>
+                                <tr><td class="year">1591</td><td>Reçu de Jean de Serres à Olivier de Serres</td></tr>
+                                <tr><td class="year">1592</td><td>Assemblée Villeneuve les Avignon</td></tr>
+                                <tr><td class="year">1592</td><td>Garnison du Pradel</td></tr>
+                                <tr><td class="year">1592</td><td>Compoix de Bourg Saint Andeol</td></tr>
+                                <tr><td class="year">1593</td><td>Transaction Olivier/Jean sur héritage Leyris</td></tr>
+                                <tr><td class="year">1593</td><td>Transaction et Obligation entre Olivier et Jean de Serres</td></tr>
+                                <tr><td class="year">1593</td><td>Compoix de Bourg Saint Andéol</td></tr>
+                                <tr><td class="year">1593</td><td>Arrentement des terres du Pradel à Chaussy</td></tr>
+                                <tr><td class="year">1593</td><td>Jean de Serres accord religions</td></tr>
+                                <tr><td class="year">1593</td><td>lettre de Henri IV sur Jean de Serres</td></tr>
+                                <tr><td class="year">1594</td><td>Assemblée à Bagnols</td></tr>
+                                <tr><td class="year">1594</td><td>Mandement des députés</td></tr>
+                                <tr><td class="year">1594</td><td>Transaction et accord entre de Serres St Ferreol</td></tr>
+                                <tr><td class="year">1594</td><td>Vente des terres de l’héritage de Leyris</td></tr>
+                                <tr><td class="year">1594</td><td>Obligation Olivier de Serres Leyris</td></tr>
+                                <tr><td class="year">1594</td><td>Vente à Cousignac</td></tr>
+                                <tr><td class="year">1594</td><td>Achat pour sr Claude Surel</td></tr>
+                                <tr><td class="year">1594</td><td>Quitance pour du Pradel</td></tr>
+                                <tr><td class="year">1594</td><td>Investiture Fain suite à achat</td></tr>
+                                <tr><td class="year">1594</td><td>Compromis entre le sr de St Ferreol, Marguerite de Carla et les sieurs des Serres</td></tr>
+                                <tr><td class="year">1594</td><td>Mariage entre noble Daniel des Serres sieur de Leyris et delle Anne de Frize</td></tr>
+                                <tr><td class="year">1594</td><td>Accord entre Olivier de Serres et Ferreol Marron</td></tr>
+                                <tr><td class="year">1594</td><td>Achat pour le capitaine Jehan Nicols</td></tr>
+                                <tr><td class="year">1594</td><td>Jehan Moynier contre noble Ollivier des Serres sieur du Pradel et le sieur de Leyris</td></tr>
+                                <tr><td class="year">1594</td><td>Vente Jacques Marcel Olivier de Serres</td></tr>
+                                <tr><td class="year">1594</td><td>LETTRE DE JEAN DE SERRES, HISTORIOGRAPHE DE FRANCE, A SON FRÈRE OLIVIER.</td></tr>
+                                <tr><td class="year">1594</td><td>Procuration pour péage du sel.</td></tr>
+                                <tr><td class="year">1594</td><td>Lettre inédite de Jean de Serres au roi Henry IV, Avril 1594.</td></tr>
+                                <tr><td class="year">1595</td><td>Tailles dues par de Marron et de Saint-Ferréol</td></tr>
+                                <tr><td class="year">1595</td><td>1er testament d'Olivier de Serres</td></tr>
+                                <tr><td class="year">1596</td><td>Plaidoirie à Castres pour l’héritage de Leyris</td></tr>
+                                <tr><td class="year">1596</td><td>Lettre de Henry IV à Philippe Duplessis-Mornay pour la défense de Jean de Serres</td></tr>
+                                <tr><td class="year">1596</td><td>Codicille au testaments d'Olivier de Serres</td></tr>
+                                <tr><td class="year">1596</td><td>Jean Baratier de Saignes  épouse Esther d'Arbalestier</td></tr>
+                                <tr><td class="year">1596</td><td>Prise de jean de Serres déclarée mauvaise par le roi</td></tr>
+                                <tr><td class="year">1596</td><td>Rumeurs sur Jean de Serres</td></tr>
+                                <tr><td class="year">1596</td><td>Arrêt du conseil du roi, assignant 1450 et 5990 écus à Jean de Serres</td></tr>
+                                <tr><td class="year">1596</td><td>Jean de Serres nommé historiographe du roi</td></tr>
+                                <tr><td class="year">1596</td><td>lettre de Henri IV sur Jean de Serres</td></tr>
+                                <tr><td class="year">1597</td><td>Arrêt entre de Ferreol et de Serres</td></tr>
+                                <tr><td class="year">1597</td><td>Antoine Faure de la Cloche</td></tr>
+                                <tr><td class="year">1597</td><td>Arrestation de Jean de Serres. Extrait des Registres du Conseil d’État,</td></tr>
+                                <tr><td class="year">1597</td><td>Transcription Arrêt de cour, entre Alain de St Ferriol et Olivier de Serres</td></tr>
+                                <tr><td class="year">1597</td><td>Assignation de 500 écus à Jean de Serres</td></tr>
+                                <tr><td class="year">1597</td><td>Jean de Serres imprime Apparatus ad fidem catholicam</td></tr>
+                                <tr><td class="year">1597</td><td>lettre de Henri IV sur Jean de Serres</td></tr>
+                                <tr><td class="year">1597</td><td>Accord entre Jean de Serres et son libraire Abel Angelier.</td></tr>
+                                <tr><td class="year">1597</td><td>Registre des délibérations du Consistoire de Villeneuve-de-Berg</td></tr>
+                                <tr><td class="year">1598</td><td>Subvention à l'histoire du Vivarais et de France</td></tr>
+                                <tr><td class="year">1598</td><td>Dot de Marguerite femme d’Olivier de Serres</td></tr>
+                                <tr><td class="year">1598</td><td>Daniel des Serres est nommé Juge à Villeneuve</td></tr>
+                                <tr><td class="year">1598</td><td>Contestation de Surrel Leyris contre Olivier de Serres</td></tr>
+                                <tr><td class="year">1598</td><td>Destraction de François d'Arcons</td></tr>
+                                <tr><td class="year">1598</td><td>Mort de Jean de Serres</td></tr>
+                                <tr><td class="year">1598</td><td>Olivier de Serres part pour Paris</td></tr>
+                                <tr><td class="year">1598</td><td>Le pasteur Lisay est précepteur au Pradel</td></tr>
+                                <tr><td class="year">1599</td><td>Quittance rente moulin de Berg.</td></tr>
+                                <tr><td class="year">1599</td><td>Epitre de Chalendar à Olivier de Serres</td></tr>
+                                <tr><td class="year">1599</td><td>Vente d'une terre par Marguerite d'Arcons</td></tr>
+                                <tr><td class="year">1599</td><td>Ordonnance d’Henry IV, réglementant la manufacture de la soie, Janvier 1599.</td></tr>
+                                <tr><td class="year">1600</td><td>Pension foncière de Claude Ponnet</td></tr>
+                                <tr><td class="year">1600</td><td>Arrêt Ferreol Marron contre Olivier de Serres</td></tr>
+                                <tr><td class="year">1600</td><td>Vente de Javalenc par Ysabeau de Saint Ferreol</td></tr>
+                                <tr><td class="year">1600</td><td>Lettre de Henri IV à Olivier de Serres</td></tr>
+                                <tr><td class="year">1600</td><td>Vente du moulin dit du Milieu</td></tr>
+                                <tr><td class="year">1600</td><td>Lettre de Henri IV aux genevois</td></tr>
+                                <tr><td class="year">1600</td><td>Olivier de Serres offre des théâtres d'Agriculture à la cour du roi en 1600 et 1603.</td></tr>
+                                <tr><td class="year">1601</td><td>Quittance d'Olivier de Serres à Jean Borrid</td></tr>
+                                <tr><td class="year">1601</td><td>Contrat d’impression du Théâtre d’agriculture. Archives nationales cote MC ET XLIX 255 maître François 1601.</td></tr>
+                                <tr><td class="year">1602</td><td>Donation des droits de Leyris à Gédéon de Serres</td></tr>
+                                <tr><td class="year">1602</td><td>Lettres patentes du roi pour le développement de la soie</td></tr>
+                                <tr><td class="year">1602</td><td>Olivier de Serres se rend à Orange</td></tr>
+                                <tr><td class="year">1602</td><td>Vente de 400000 plants de murier par Gédéon de Serres</td></tr>
+                                <tr><td class="year">1603</td><td>Délibération à Donzère, Ferreol, Marron</td></tr>
+                                <tr><td class="year">1603</td><td>Procédure consuls de Donzère contre Marron</td></tr>
+                                <tr><td class="year">1603</td><td>Accord Serres Ferreol</td></tr>
+                                <tr><td class="year">1603</td><td>Lettre de mandement pour l'achat de mûriers et de graine</td></tr>
+                                <tr><td class="year">1603</td><td>Vente d'un devois à Saint Jean le Centenier</td></tr>
+                                <tr><td class="year">1604</td><td>Abbaye de la Villedieu. Démolition de l’église de Veyras et de la chapelle de Leyris en 1604</td></tr>
+                                <tr><td class="year">1604</td><td>Mariage de Gédéon de Serre et dlle Abigail Baudouin</td></tr>
+                                <tr><td class="year">1604</td><td>Mariage de Daniel Sabatier clavaire du roi et dlle Bonne de Serres</td></tr>
+                                <tr><td class="year">1604</td><td>Privilège pour 20 ans pour l'exploitation de l'écorce de mûrier par Olivier de Serres</td></tr>
+                                <tr><td class="year">1604</td><td>Privilège du roi pour l'exploitation de l'écorce du mûrier blanc</td></tr>
+                                <tr><td class="year">1604</td><td>Obligation 5000 livres Salomon du Faure</td></tr>
+                                <tr><td class="year">1604</td><td>Obligé de 5000 livres au nom de Jean de Fayn</td></tr>
+                                <tr><td class="year">1605</td><td>Quittance à M. Jouannas pour rente du Pradel</td></tr>
+                                <tr><td class="year">1605</td><td>Accord Serres Carlat de Marron</td></tr>
+                                <tr><td class="year">1605</td><td>Comptes viendrait du livre de raison</td></tr>
+                                <tr><td class="year">1605</td><td>DÉCLARATION et quittance de 600 livres, DE GÉDÉON DE SERRES A SON PÈRE OLIVIER.</td></tr>
+                                <tr><td class="year">1605</td><td>Les maximes du livre de raison d'Olivier de Serres</td></tr>
+                                <tr><td class="year">1606</td><td>Livre de raison, moulins et compoix</td></tr>
+                                <tr><td class="year">1606</td><td>Moulin de Toulouse sur la rivière d'Auzon.</td></tr>
+                                <tr><td class="year">1606</td><td>Notaires sur Loriol et Livron</td></tr>
+                                <tr><td class="year">1606</td><td>Les titres de familles du cabinet d'Olivier de Serres</td></tr>
+                                <tr><td class="year">1607</td><td>Accord Serres Carlat de Marron</td></tr>
+                                <tr><td class="year">1607</td><td>Arréage de Tailles Carlat Ferreol</td></tr>
+                                <tr><td class="year">1607</td><td>Compromis entre les consuls de Donzère et Carlat Ferreol</td></tr>
+                                <tr><td class="year">1607</td><td>Appel de Carlat de Marron</td></tr>
+                                <tr><td class="year">1607</td><td>Procédures entre consuls de Donzere et Ferreol</td></tr>
+                                <tr><td class="year">1607</td><td>Paiement de la rente de du Pradel à Jouannas</td></tr>
+                                <tr><td class="year">1608</td><td>Exploit d'huissier rédition de compte</td></tr>
+                                <tr><td class="year">1608</td><td>Vente de terres aux consuls de Donzère</td></tr>
+                                <tr><td class="year">1608</td><td>Vol de blé à Donzère</td></tr>
+                                <tr><td class="year">1608</td><td>testament de damoiselle Marye de Serres</td></tr>
+                                <tr><td class="year">1608</td><td>Arrêt condamnant Olivier de Serres, tuteur des enfants de Jean de Serres</td></tr>
+                                <tr><td class="year">1608</td><td>Arrêt condamnant Olivier de Serres à payer 6000 livres aux héritiers de Jean Faure.</td></tr>
+                                <tr><td class="year">1608</td><td>Olivier des Serres, témoin au mariage de Daniel Béchon</td></tr>
+                                <tr><td class="year">1608</td><td>Testament de Marie de Serres</td></tr>
+                                <tr><td class="year">1608</td><td>Vital Chaussy achète une terre à Peyrotin</td></tr>
+                                <tr><td class="year">1609</td><td>Maintien en jouissance Planary sur Donzère</td></tr>
+                                <tr><td class="year">1609</td><td>Demande en garantie de Donzere contre Ferreol</td></tr>
+                                <tr><td class="year">1609</td><td>Procès Ferreol</td></tr>
+                                <tr><td class="year">1609</td><td>Lettres aux consuls de Donzère</td></tr>
+                                <tr><td class="year">1609</td><td>Quittances d’Olivier des Serres aux consuls Donzère</td></tr>
+                                <tr><td class="year">1609</td><td>Accord Ferreol consuls de Donzere</td></tr>
+                                <tr><td class="year">1609</td><td>Lettres aux consuls par Olivier de Serres au sujet des immeubles vendus</td></tr>
+                                <tr><td class="year">1609</td><td>Quittance procès Ferreol</td></tr>
+                                <tr><td class="year">1609</td><td>Sommation par Barnier au nom d'Olivier de Serres contre Faure pour qu'il encaisse 6000 livres</td></tr>
+                                <tr><td class="year">1609</td><td>Procédures pour les consuls de Donzère vol de blé</td></tr>
+                                <tr><td class="year">1609</td><td>Ordonnance du commissaire de Castres</td></tr>
+                                <tr><td class="year">1609</td><td>Lettre d'Olivier de Serres aux consuls de Donzère</td></tr>
+                                <tr><td class="year">1610</td><td>Procuration Jean de Serres</td></tr>
+                                <tr><td class="year">1610</td><td>Extinction de pension Serres Ferreol</td></tr>
+                                <tr><td class="year">1610</td><td>Lettre Olivier de Serres aux consuls de Donzère</td></tr>
+                                <tr><td class="year">1610</td><td>Mariage d'Isabeau Fille d'Olivier de Serres</td></tr>
+                                <tr><td class="year">1610</td><td>Jacques fils d'Olivier de Serres part à Paris</td></tr>
+                                <tr><td class="year">1610</td><td>Lettre de Gédéon du Pradel.</td></tr>
+                                <tr><td class="year">1610</td><td>Procuration donnée par noble Jean de Serres</td></tr>
+                                <tr><td class="year">1611</td><td>Quittance des droits Daniel de Serres juge</td></tr>
+                                <tr><td class="year">1611</td><td>Dettes de noble Daniel de Serres</td></tr>
+                                <tr><td class="year">1611</td><td>Arrentements et quittances Daniel</td></tr>
+                                <tr><td class="year">1611</td><td>Donation Damoiselle Arquensye du Pradel</td></tr>
+                                <tr><td class="year">1611</td><td>Reconnaissance de dette de Daniel de Serres</td></tr>
+                                <tr><td class="year">1611</td><td>Comptes par Olivier de Serres pour les enfants de Jean de Serres</td></tr>
+                                <tr><td class="year">1611</td><td>Comptes de Gédéon pour de Jean de Serres</td></tr>
+                                <tr><td class="year">1611</td><td>Comptes Valeton pour les biens de la femme de Jean de Serres</td></tr>
+                                <tr><td class="year">1611</td><td>Comptes Valeton pour les hoirs de Jean de Serres.</td></tr>
+                                <tr><td class="year">1611</td><td>Arrentement des Moulins. Extrait du Livre de Raison.</td></tr>
+                                <tr><td class="year">1611</td><td>Lettre Olivier de Serres aux consuls de Donzère</td></tr>
+                                <tr><td class="year">1611</td><td>Lettre de Gédéon de Serres du Pradel à son père, Olivier de Serres.</td></tr>
+                                <tr><td class="year">1611</td><td>Pierre de Serres, fils d'Olivier reçu docteur en droit</td></tr>
+                                <tr><td class="year">1611</td><td>Jeanne fille de jean de Serres épouse Salomon de Merez</td></tr>
+                                <tr><td class="year">1611</td><td>Transaction Marguerite de Carlat et Olivier de Serres</td></tr>
+                                <tr><td class="year">1611</td><td>Transaction Olivier de Serres avec Jean Beraud moulin à huile</td></tr>
+                                <tr><td class="year">1611</td><td>Daniel de Serres règle les droits de sa charge de juge royal à Villeneuve</td></tr>
+                                <tr><td class="year">1612</td><td>Accord Daniel de Serres et St Ferréol passé devant les consuls de Donzère</td></tr>
+                                <tr><td class="year">1612</td><td>Quittance réciproque entre Olivier des Serres et dlle Marguerite de Carla</td></tr>
+                                <tr><td class="year">1612</td><td>Nomination de Jacques des Serres, écuyer.</td></tr>
+                                <tr><td class="year">1612</td><td>Les tracasseries continuent</td></tr>
+                                <tr><td class="year">1612</td><td>Testament d'Olivier de Serres</td></tr>
+                                <tr><td class="year">1612</td><td>Quittance réciproque pour Sieur Jehan Moynier et noble Olivier de Serre, sieur du Pradel,</td></tr>
+                                <tr><td class="year">1612</td><td>Quittance pour Anthoine Cindre Loyer perpétuel pour une maison à Bourg.</td></tr>
+                                <tr><td class="year">1612</td><td>Ratification pour Anthoine Beraud portant appentionnement pour Olivier des Serres</td></tr>
+                                <tr><td class="year">1612</td><td>Quittance Olivier de Serres, Lacourt notaire au sujet d'un verger.</td></tr>
+                                <tr><td class="year">1612</td><td>Achat par Jean de Bonnot une terre à Bourg Saint Andéol.</td></tr>
+                                <tr><td class="year">1612</td><td>Cassation d’echange entre le sieur de Pradel et me Charles Girard</td></tr>
+                                <tr><td class="year">1612</td><td>Envoi de livres d'architecture par Gédéon à Jacques</td></tr>
+                                <tr><td class="year">1612</td><td>Mort de Gédéon de Serres</td></tr>
+                                <tr><td class="year">1612</td><td>Quittance pour Pierre Chambon par Olivier de Serres</td></tr>
+                                <tr><td class="year">1612</td><td>Quittance pour Olivier des Serres, de noble Laurent de St Ferriol</td></tr>
+                                <tr><td class="year">1612</td><td>Testament Anne de Frise de Montvisard, femme de Daniel de Serres</td></tr>
+                                <tr><td class="year">1612</td><td>Jacques Barnier pour le compte d'Olivier de Serres</td></tr>
+                                <tr><td class="year">1612</td><td>Mariage de la plus jeune des filles, Marie de Serres</td></tr>
+                                <tr><td class="year">1612</td><td>Ratification de deux vente faite à Bourg Saint Andéol par Olivier de Serres</td></tr>
+                                <tr><td class="year">1613</td><td>Maître de Lacour notaire</td></tr>
+                                <tr><td class="year">1613</td><td>Hommage d'Olivier de Serres à Monseigneur d'Ornano de Montlor</td></tr>
+                                <tr><td class="year">1614</td><td>Une bible protestante en italien offerte au pasteur Jean Valeton de Privas</td></tr>
+                                <tr><td class="year">1614</td><td>Réemission Girard</td></tr>
+                                <tr><td class="year">1614</td><td>Quittance André Bourge pour Marie des Serres.</td></tr>
+                                <tr><td class="year">1614</td><td>Quittance</td></tr>
+                                <tr><td class="year">1614</td><td>autre Bourge</td></tr>
+                                <tr><td class="year">1614</td><td>Comptes rendus à Olivier de Serres par Abigail Baudoin</td></tr>
+                                <tr><td class="year">1614</td><td>Comptes par Olivier des Serres tuteur des hoirs Jean de Serres</td></tr>
+                                <tr><td class="year">1614</td><td>Héritage de Leyris</td></tr>
+                                <tr><td class="year">1614</td><td>Comptes Abigail Baudoin</td></tr>
+                                <tr><td class="year">1614</td><td>Quittance de Ysac Ferret pour Olivier de Serres, dot Marie</td></tr>
+                                <tr><td class="year">1614</td><td>Me Daniel de Serres, ratifie et confirme la vente du moulin de Tourne</td></tr>
+                                <tr><td class="year">1614</td><td>Catherine de Serres au Pradel</td></tr>
+                                <tr><td class="year">1615</td><td>Condamnation à payer aux hoir Joubert</td></tr>
+                                <tr><td class="year">1615</td><td>Obligation par Jacques des Serreà Abigail Baudoin</td></tr>
+                                <tr><td class="year">1615</td><td>Arrentement</td></tr>
+                                <tr><td class="year">1615</td><td>Arrentement du domaine du Pradel à Jacques Barnier.</td></tr>
+                                <tr><td class="year">1615</td><td>Homonyme de Jean de Serres</td></tr>
+                                <tr><td class="year">1615</td><td>Testament de damoiselle Anne de Frize de Montduysant</td></tr>
+                                <tr><td class="year">1616</td><td>Accord Ferreol Viviers</td></tr>
+                                <tr><td class="year">1616</td><td>Arrentement des moulins à Martin Pages et Feytel</td></tr>
+                                <tr><td class="year">1616</td><td>Dépenses et voyages de Barnier à Bourg St Andéol</td></tr>
+                                <tr><td class="year">1616</td><td>Transaction entre Catherine des Serres et Jacques des Serres</td></tr>
+                                <tr><td class="year">1616</td><td>Tutelle. Comptereau Olivier des Serres contuteur des enfants de jean</td></tr>
+                                <tr><td class="year">1616</td><td>Compte de tutelle des enfants de Jean de Serres par Jacques Valleton, concernant les biens du père.</td></tr>
+                                <tr><td class="year">1616</td><td>Compte de la tutelle par Jacques Valleton des enfants de Jean de Serres, concernant les biens de Marguerite de Godarry, épouse de Jean de Serres.</td></tr>
+                                <tr><td class="year">1617</td><td>Reçu Barnier</td></tr>
+                                <tr><td class="year">1617</td><td>Compte des enfants de Jean de Serres par Olivier de Serres</td></tr>
+                                <tr><td class="year">1617</td><td>Salomon de Meres Loriol</td></tr>
+                                <tr><td class="year">1617</td><td>Jean de Serres... Raymond de Serres</td></tr>
+                                <tr><td class="year">1617</td><td>Copie du testament 1617 Olivier de Serres.</td></tr>
+                                <tr><td class="year">1617</td><td>Testament olographe d'Olivier De Serres de 1617</td></tr>
+                                <tr><td class="year">1617</td><td>Transaction entre les héritiers de Jean de Serres et Gabriel de Grillet</td></tr>
+                                <tr><td class="year">1617</td><td>Jacques d'Arcons reçu avocat à Villeneuve de Berg</td></tr>
+                                <tr><td class="year">1617</td><td>Testament olographe original d'Olivier de Serres 1617</td></tr>
+                                <tr><td class="year">1617</td><td>Accord et transaction, taille Olivier de Serres</td></tr>
+                                <tr><td class="year">1617</td><td>Accord entre Daniel des Serres et Jacques Augier</td></tr>
+                                <tr><td class="year">1617</td><td>Donation d'Olivier de Serres d'une vigne à son fils Pierre de Serres</td></tr>
+                                <tr><td class="year">1618</td><td>Convention Ferreol consuls Donzere</td></tr>
+                                <tr><td class="year">1618</td><td>Divers Raymond de Serres</td></tr>
+                                <tr><td class="year">1619</td><td>Demande de plants de vigne muscats pour planter une vigne à Rochecolombe</td></tr>
+                                <tr><td class="year">1619</td><td>Déclaration du décès d'Olivier de Serres</td></tr>
+                                <tr><td class="year">1619</td><td>Acte d’aliénation Daniel des Serres, suite au décés d’Olivier</td></tr>
+                                <tr><td class="year">1619</td><td>Inventaire après décès Olivier de Serres</td></tr>
+                                <tr><td class="year">1619</td><td>Copie de la déclaration du décès d'Olivier de Serres.</td></tr>
+                                <tr><td class="year">1619</td><td>La tombe d'olivier de serres</td></tr>
+                                <tr><td class="year">1619</td><td>Quittance arrentement du Pradel par Daniel</td></tr>
+                                <tr><td class="year">1619</td><td>Frais de médicaments pour Olivier de Serres.</td></tr>
+                                <tr><td class="year">1619</td><td>Action d'Abigail Baudouin contre Daniel de Serres</td></tr>
+                                <tr><td class="year">1619</td><td>Daniel de Serres délibère à Villeneuve.</td></tr>
+                                <tr><td class="year">1619</td><td>Mémoire pour servir les enfants de Jan de Serres.</td></tr>
+                                <tr><td class="year">1620</td><td>Mise en cause par le baron de la Roche de la vente du Pradel</td></tr>
+                                <tr><td class="year">1620</td><td>Jacques de Serres: Sept paradoxes au mestier de la guerre convertis en axiomes</td></tr>
+                                <tr><td class="year">1620</td><td>Testament de Bonne d’Arcons donnant 300 livres à Constant des Serres son cousin</td></tr>
+                                <tr><td class="year">1620</td><td>Diplôme de l’Académie de Cahors pour noble François des Serres</td></tr>
+                                <tr><td class="year">1620</td><td>Mariage de Jacques Barnier avec Gabrielle Brueil</td></tr>
+                                <tr><td class="year">1620</td><td>Lettre autographe de Salomon de Merez.</td></tr>
+                                <tr><td class="year">1621</td><td>Inventaire sur la qualité de bénéfice d’Inventaire des biens de noble Olivier des Serres</td></tr>
+                                <tr><td class="year">1621</td><td>Requète contre Abigail Baudoin</td></tr>
+                                <tr><td class="year">1622</td><td>Compoix de St Montant</td></tr>
+                                <tr><td class="year">1622</td><td>Daniel des Serres donne plusieurs procurations</td></tr>
+                                <tr><td class="year">1623</td><td>Quittance Daniel de Serres pour une fondation de messe</td></tr>
+                                <tr><td class="year">1623</td><td>Minute du mariage de Franc(ois) de Serres</td></tr>
+                                <tr><td class="year">1623</td><td>Testament Daniel de Serres</td></tr>
+                                <tr><td class="year">1623</td><td>Testament de damoiselle Ysabeau de Serre du Pradel</td></tr>
+                                <tr><td class="year">1623</td><td>Livre de raison Daniel de Serres</td></tr>
+                                <tr><td class="year">1623</td><td>Restitution et inventaire du Pradel ruiné</td></tr>
+                                <tr><td class="year">1623</td><td>Mémoires de Daniel de Serres</td></tr>
+                                <tr><td class="year">1623</td><td>Requète contre Louise d’Arlempde, veuve et héritière de feu noble François de Serres du Pradel</td></tr>
+                                <tr><td class="year">1623</td><td>Testament d'Isabeau de Serres</td></tr>
+                                <tr><td class="year">1623</td><td>Rétablissement de l’édit de Nantes en bas Vivarais</td></tr>
+                                <tr><td class="year">1624</td><td>Accord entre Balthazard de Flotte baron de la Roche et Daniel de Serres</td></tr>
+                                <tr><td class="year">1624</td><td>Mariage d’entre noble Franc de Serres, et de dlle Louise de Mirabel</td></tr>
+                                <tr><td class="year">1624</td><td>Quittance par Catherine des Serres à noble Daniel des Serres</td></tr>
+                                <tr><td class="year">1625</td><td>Rapport d’huissier Jacques des Serres</td></tr>
+                                <tr><td class="year">1625</td><td>Héritage Olivier</td></tr>
+                                <tr><td class="year">1626</td><td>Biens sur Montrigaud en Dauphiné d’Anne de Frise, femme de Daniel</td></tr>
+                                <tr><td class="year">1626</td><td>Boulegues à Mirabel. Transaction entre Daniel et Jean de Serres</td></tr>
+                                <tr><td class="year">1626</td><td>Villeneuve de Berg, rançon Sussfret</td></tr>
+                                <tr><td class="year">1626</td><td>EXTRAIT DES COMPTES DE LA SUCCESSION DE JEAN DE SERRES</td></tr>
+                                <tr><td class="year">1626</td><td>Tutelle et succession Jean de Serres. Liste des pieces et actes recus par Jean de Serres de son cousin Daniel de Serres</td></tr>
+                                <tr><td class="year">1627</td><td>contre les hoirs de noble Gédéon de Serres</td></tr>
+                                <tr><td class="year">1627</td><td>Regiment de Normandy Charmes Soyon</td></tr>
+                                <tr><td class="year">1628</td><td>Demande réparation des dégâts des troupes</td></tr>
+                                <tr><td class="year">1628</td><td>Dépenses siège du Pradel</td></tr>
+                                <tr><td class="year">1628</td><td>Dépenses et dégâts causés à Saint jean le Centenier lors du siège du Pradel</td></tr>
+                                <tr><td class="year">1628</td><td>voyage de l’évêque au Pradel.</td></tr>
+                                <tr><td class="year">1628</td><td>Remboursement de dépenses pour 300 hommes</td></tr>
+                                <tr><td class="year">1628</td><td>Etat des dépenses par les consuls de Viviers</td></tr>
+                                <tr><td class="year">1628</td><td>Guerre à Villeneuve de Berg</td></tr>
+                                <tr><td class="year">1628</td><td>Etat des dépenses pour la ville de Viviers.</td></tr>
+                                <tr><td class="year">1628</td><td>Dépenses pour le siège du Pradel</td></tr>
+                                <tr><td class="year">1628</td><td>Siège du Pradel</td></tr>
+                                <tr><td class="year">1628</td><td>Siège du Pradel et démolition</td></tr>
+                                <tr><td class="year">1628</td><td>Transport siège du Pradel</td></tr>
+                                <tr><td class="year">1628</td><td>Voyage de l'évèque de Viviers au Pradel</td></tr>
+                                <tr><td class="year">1628</td><td>Les officiers du siège et de la destruction du Pradel</td></tr>
+                                <tr><td class="year">1628</td><td>Entretien des gens de guerre en Vivarais.</td></tr>
+                                <tr><td class="year">1628</td><td>Chasser les rebelles hors de Soyons</td></tr>
+                                <tr><td class="year">1628</td><td>Prise du chateau de Salavas</td></tr>
+                                <tr><td class="year">1628</td><td>Etat des dépenses pour le siège du Pradel</td></tr>
+                                <tr><td class="year">1628</td><td>Dépenses siège du Pradel</td></tr>
+                                <tr><td class="year">1628</td><td>Destruction du Pradel et de Mirabel</td></tr>
+                                <tr><td class="year">1628</td><td>Dépenses des consuls de Viviers munitions pour le siège du Pradel</td></tr>
+                                <tr><td class="year">1628</td><td>Estat des despances faictes par les consulz de Viviers</td></tr>
+                                <tr><td class="year">1628</td><td>Le Pradel, restitution 1623, destruction 1628.</td></tr>
+                                <tr><td class="year">1629</td><td>le roi est créancier de l’hoirie de Jean de Serres</td></tr>
+                                <tr><td class="year">1629</td><td>Testament olographe de Franc de Serres</td></tr>
+                                <tr><td class="year">1629</td><td>Logement des soldats</td></tr>
+                                <tr><td class="year">1629</td><td>Siège de Soyons</td></tr>
+                                <tr><td class="year">1630</td><td>Testament de Franc de Serres</td></tr>
+                                <tr><td class="year">1631</td><td>Commission de commandant d’une compagnie d’infanterie, par le roi, pour noble Constantin des Serres</td></tr>
+                                <tr><td class="year">1632</td><td>François de Serres du Pradel, demandeur en cassation Jean Baptiste de St Féréol</td></tr>
+                                <tr><td class="year">1632</td><td>Compoix de Villeneuve de Berg de 1632 Ruine du moulin de Berg</td></tr>
+                                <tr><td class="year">1633</td><td>Convention relative au mariage de Madeleine Mirabel fille de Louis d'Arlempde</td></tr>
+                                <tr><td class="year">1634</td><td>Donation d’entre vifz pour damoiselle Loyse Darlende femme à noble Franc du Pradel</td></tr>
+                                <tr><td class="year">1636</td><td>Conflit entre St Féréol et Franc des Serres du Pradel</td></tr>
+                                <tr><td class="year">1636</td><td>Testament de François des Serres seigneur du Pradel</td></tr>
+                                <tr><td class="year">1636</td><td>Accord, entre noble Jacques d'Arlempde et Louys Darlempde son frère.</td></tr>
+                                <tr><td class="year">1637</td><td>Ajournement de noble Gédéon des Serres sieur de St Montan contre noble Franc des Serres sieur du Pradel</td></tr>
+                                <tr><td class="year">1638</td><td>Compoix de Sceautres</td></tr>
+                                <tr><td class="year">1639</td><td>Demoiselle Louise d’Arlempde veuve de Franc de Serres.</td></tr>
+                                <tr><td class="year">1640</td><td>Rubrique générale des actes de me Jean Chaudru</td></tr>
+                                <tr><td class="year">1640</td><td>Cadastre de Mirabel. Etat du Pradel dégradé en 1640.</td></tr>
+                                <tr><td class="year">1640</td><td>Cadastre de Mirabel le moulin du Pradel</td></tr>
+                                <tr><td class="year">1640</td><td>Inventaire du Pradel</td></tr>
+                                <tr><td class="year">1641</td><td>héritage Leyris</td></tr>
+                                <tr><td class="year">1643</td><td>héritage Leyris</td></tr>
+                                <tr><td class="year">1645</td><td>Commission de commandant d’une compagnie d’infanterie, par le roi, pour noble Constantin des Serres</td></tr>
+                                <tr><td class="year">1647</td><td>Affaire des joyaux</td></tr>
+                                <tr><td class="year">1648</td><td>Réémission Dlle Bonne des Serres du Pradel</td></tr>
+                                <tr><td class="year">1648</td><td>Compoix de Gras, St Jean le Centenier, Bourg St Andéol</td></tr>
+                                <tr><td class="year">1651</td><td>Succession de feu Louis Darlempde, transaction et ratification.</td></tr>
+                                <tr><td class="year">1660</td><td>Mémoire de Constantin sur sa noblesse</td></tr>
+                                <tr><td class="year">1662</td><td>Constantin, mariage</td></tr>
+                                <tr><td class="year">1663</td><td>1663 Défense à Constantin de Serres de faire des assemblées de la RPR au Pradel.</td></tr>
+                                <tr><td class="year">1665</td><td>Testament de Constantin</td></tr>
+                                <tr><td class="year">1665</td><td>Constantin fait une rémission à Jacques Lafont</td></tr>
+                                <tr><td class="year">1667</td><td>Condamnation Constantin des Serres et le pasteur Paul Acorat</td></tr>
+                                <tr><td class="year">1668</td><td>Testament incomplet de Louis de Mirabel</td></tr>
+                                <tr><td class="year">1668</td><td>Constantin de Serres fit aveu et dénombrement de sa maison et domaine du Pradel</td></tr>
+                                <tr><td class="year">1671</td><td>Suite à condamnation Constantin à 500 £ d’amende</td></tr>
+                                <tr><td class="year">1672</td><td>Testament de Constantin des Serres</td></tr>
+                                <tr><td class="year">1677</td><td>Registres paroissiaux tenus au Pradel</td></tr>
+                                <tr><td class="year">1678</td><td>Abjuration de François Dupradel</td></tr>
+                                <tr><td class="year">1681</td><td>Constantin de Serres entretient le culte RPR au Pradel</td></tr>
+                                <tr><td class="year">1681</td><td>Deux quittances, Constantin de Serres</td></tr>
+                                <tr><td class="year">1681</td><td>Dénonciation du culte à Villeneuve de Berg</td></tr>
+                                <tr><td class="year">1682</td><td>Acte Marie de Leyris du Pradel / Marie Cheyron sa domestique.</td></tr>
+                                <tr><td class="year">1682</td><td>Jugement signifié à Constantin des Serres</td></tr>
+                                <tr><td class="year">1685</td><td>Mariage de Jacques des Serres avec Magdeleine Toulouze de La Gorce</td></tr>
+                                <tr><td class="year">1685</td><td>Mariage de Jacques de Serres du Pradel</td></tr>
+                                <tr><td class="year">1686</td><td>Quittance pour Marie du Serres</td></tr>
+                                <tr><td class="year">1686</td><td>Quittance pour Marie du Serres</td></tr>
+                                <tr><td class="year">1686</td><td>vente de fruits par led Constant à noble Antoine d’Arlempde</td></tr>
+                                <tr><td class="year">1688</td><td>Constantin is précepteur</td></tr>
+                                <tr><td class="year">1689</td><td>Marie du Pradel arrente son moulin de Vernède</td></tr>
+                                <tr><td class="year">1690</td><td>Réparations au moulin du Pradel</td></tr>
+                                <tr><td class="year">1690</td><td>Vol de bois Procès verbal</td></tr>
+                                <tr><td class="year">1690</td><td>Procédures de Marie des Serres contre ses fermiers et son meunier</td></tr>
+                                <tr><td class="year">1690</td><td>Vol de bois au Pradel</td></tr>
+                                <tr><td class="year">1690</td><td>Vol de bois coupe d'arbre</td></tr>
+                                <tr><td class="year">1690</td><td>Vol de bois coupe d'arbre</td></tr>
+                                <tr><td class="year">1690</td><td>Lettre des officiers du Pradel</td></tr>
+                                <tr><td class="year">1690</td><td>Réponse du juge vol de bois</td></tr>
+                                <tr><td class="year">1690</td><td>Rapport de Anthoine Mongrand cardeur de Villeneuve de Berg</td></tr>
+                                <tr><td class="year">1690</td><td>Enquete par Jean Sautel juge en la juridiction du Pradel</td></tr>
+                                <tr><td class="year">1690</td><td>Conclusions définitives du substitut du procureur</td></tr>
+                                <tr><td class="year">1690</td><td>Ordonance vol de bois</td></tr>
+                                <tr><td class="year">1691</td><td>Constantin des Serres/ Françoise de Rochemure sa femme; description partage</td></tr>
+                                <tr><td class="year">1693</td><td>Marie des Serres du Pradel et Marie Chaulet sa servante lancent de leur fenêtre, une pierre</td></tr>
+                                <tr><td class="year">1693</td><td>Testament réciproque, Constantin des Serres et dame Françoise de Rochemore d’Aigremont</td></tr>
+                                <tr><td class="year">1695</td><td>quittance donnée par dlle Marie des Serres du Pradel</td></tr>
+                                <tr><td class="year">1696</td><td>Locaterie perpétuelle pour la demoiselle du Pradel Jean Aubert et pension annuelle</td></tr>
+                                <tr><td class="year">1696</td><td>Arrentement par Marie de Serres du domaine du Pradel</td></tr>
+                                <tr><td class="year">1697</td><td>Annulation de contrat moulin de berg</td></tr>
+                                <tr><td class="year">1700</td><td>Nomination d'un curateur à l'hoirie jascente de Jacques d'Arlempde</td></tr>
+                                <tr><td class="year">1701</td><td>Jacques de Serres reçoit 300 livres de Louise darlempde</td></tr>
+                                <tr><td class="year">1702</td><td>Marie de Serres du Pradel transigea avec François d’Arlempde</td></tr>
+                                <tr><td class="year">1704</td><td>quittance du 30 septembre 1704, faite par Jacques des Serres du Pradel</td></tr>
+                                <tr><td class="year">1707</td><td>Jugement suite à testament Marie de Serre du Pradel</td></tr>
+                                <tr><td class="year">1713</td><td>Héritage du sieur de Serres</td></tr>
+                                <tr><td class="year">1715</td><td>Conflit sur les moulins de la Claduègne</td></tr>
+                                <tr><td class="year">1715</td><td>Jean-Jacques de Serres en Rhénanie en 1715</td></tr>
+                                <tr><td class="year">1722</td><td>Testament de François d'Arlempde sgr de Mirabel et du Pradel</td></tr>
+                                <tr><td class="year">1728</td><td>Accord et convention passés entre Mme de Mirabel et Mme de l'Eglise</td></tr>
+                                <tr><td class="year">1738</td><td>Sébastien des Serres sgr de Coussignac nommé Bailly</td></tr>
+                                <tr><td class="year">1746</td><td>Copie d’un bail à ferme par m. de Mirabel à François Arnaud du moulin du Pradel</td></tr>
+                                <tr><td class="year">1746</td><td>Affermage du moulin de Brialas</td></tr>
+                                <tr><td class="year">1747</td><td>Copie d’un testament Anthoine de Geys de Mongaillard</td></tr>
+                                <tr><td class="year">1749</td><td>Description détaillée du château de Mirabel en mauvais état, et du domaine du Pradel.</td></tr>
+                                <tr><td class="year">1751</td><td>Mariage d'Arlempde</td></tr>
+                                <tr><td class="year">1753</td><td>Dénombrement de Monsieur de Mirabel</td></tr>
+                                <tr><td class="year">1769</td><td>Délégation du Pradel par Marie Benoite de Maillet</td></tr>
+                                <tr><td class="year">1773</td><td>Mémoire des réparations que j'ai faites au moulin du Pradel</td></tr>
+                                <tr><td class="year">1773</td><td>Mémoire de réparation faites au moulin du Pradel.</td></tr>
+                                <tr><td class="year">1773</td><td>Réparations au moulin du Pradel</td></tr>
+                                <tr><td class="year">1776</td><td>Police entre M. de Surville et m. le comte de Mirabel</td></tr>
+                                <tr><td class="year">1776</td><td>Mémoire des réparations de la despense pour le moulin à lanterne fait au moulin du Pradel</td></tr>
+                                <tr><td class="year">1776</td><td>Moulin à lanterne du Pradel</td></tr>
+                                <tr><td class="year">1776</td><td>Contrat de transformation du moulin du Pradel (Brialas) en moulin à lanterne.</td></tr>
+                                <tr><td class="year">1785</td><td>Mémoire de la reparation qu'on a faite au moulin</td></tr>
+                                <tr><td class="year">1785</td><td>Compte pour le comte de Mirabel</td></tr>
+                                <tr><td class="year">1785</td><td>Paiement soldats</td></tr>
+                                <tr><td class="year">1785</td><td>Mémoire de la reparation qu'on a faite au moulin ou au béal.</td></tr>
+                                <tr><td class="year">1785</td><td>Memoire de la reparation faite au moulin du Pradel</td></tr>
+                                <tr><td class="year">1786</td><td>Mariage, Joseph de Surville et Pauline d’Arlemde de Mirabel</td></tr>
+                                <tr><td class="year">1789</td><td>Artur Young au Pradel</td></tr>
+                                <tr><td class="year">1791</td><td>Messire Antoine Régis Augustin d'Arlempdes</td></tr>
+                                <tr><td class="year">1797</td><td>Comptes Ozil moulin du Pradel</td></tr>
+                                <tr><td class="year">1804</td><td>Obélisque de Villeneuve et théâtre</td></tr>
+                                <tr><td class="year">1810</td><td>Affermage du moulin du Pradel à Pierre Ozil</td></tr>
+                                <tr><td class="year">1819</td><td>Mémoire par la meunière</td></tr>
+                                <tr><td class="year">1820</td><td>Arrêt des comptes avec Ozil pour le moulin du Pradel.</td></tr>
+                                <tr><td class="year">1820</td><td>Inventaire de ses meubles du moulin du Pradel</td></tr>
+                                <tr><td class="year">1820</td><td>Bail du moulin du Pradel à Simon Baume</td></tr>
+                                <tr><td class="year">1826</td><td>Affermage du moulin du Pradel à Louis Vigne</td></tr>
+                                <tr><td class="year">1827</td><td>Affermage du moulin du Pradel à Louis delome</td></tr>
+                                <tr><td class="year">1845</td><td>Fabrication d'un moulin à lanterne au Pradel</td></tr>
+                                <tr><td class="year">1847</td><td>Affaire Barruel</td></tr>
+                                <tr><td class="year">1850</td><td>Conflit sur les moulins du Pradel et de Valette</td></tr>
+                                <tr><td class="year">1858</td><td>Statues Villeneuve et Aubenas</td></tr>
+                                <tr><td class="year">1866</td><td>Recherches historiques sur Villeneuve-de-Berg Mollier</td></tr>
+                                <tr><td class="year">1867</td><td>Divers concernant le domaine et le moulin du Pradel.</td></tr>
+                                <tr><td class="year">1867</td><td>M de Watré donne congé à M Pierre Rigaud.</td></tr>
+                                <tr><td class="year">1873</td><td>Opuscule : Jean de Serres, historiographe de France sous Henri IV</td></tr>
+                                <tr><td class="year">1882</td><td>Vaschalde</td></tr>
+                                <tr><td class="year">1901</td><td>Les Huguenots en Vivarais</td></tr>
+                                <tr><td class="year">1906</td><td>Les possessions Dauphinoises d'OLIVIER DE SERRES</td></tr>
+                                <tr><td class="year">1912</td><td>Transmission du Pradel</td></tr>
+                                <tr><td class="year">1930</td><td>Charles Eggiman, antiquaire protestant spécialisé dans les livres anciens</td></tr>
+                                <tr><td class="year">1936</td><td>Olivier de Serres, seigneur du Pradel. Par A. Lavondès</td></tr>
+                                <tr><td class="year">1938</td><td>Le Pradel avant Olivier de Serres</td></tr>
+                                <tr><td class="year">1938</td><td>Les ascendants d’Olivier de Serres.</td></tr>
+                                <tr><td class="year">1939</td><td>Commémorer le quatrième centenaire de la naissance d'Olivier de Serres</td></tr>
+                                <tr><td class="year">1939</td><td>Autour de la famille d’OLIVIER DE SERRES Louis AURANCHE</td></tr>
+                                <tr><td class="year">1970</td><td>Vente du moulin du millieu (Bourg andeol?)</td></tr>
+                                <tr><td class="year">2008</td><td>Archives diverses concernant les moulins</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <h3>Institut Olivier-de-SERRES</h3>
+            <p style="margin-bottom: 0;">Association Loi de 1901, fondée en 1939.</p>
+            <p>1064 chemin du Pradel, 07170 Mirabel</p>
+            
+            <div class="footer-links">
+                <a href="https://www.institut-olivier-de-serres.fr/index.php">Espace libre</a>
+                <span>|</span>
+                <a href="https://www.institut-olivier-de-serres.fr/Adherents/re1ser2ve4.php">Espace Adhérents</a>
+                <span>|</span>
+                <a href="https://www.institut-olivier-de-serres.fr/Sandre/index.php">Espace Archives</a>
+            </div>
+            
+             <div class="footer-actions">
+                <a href="https://www.institut-olivier-de-serres.fr/Documents/Adhesion.pdf">Adhérer</a>
+                <a href="https://www.institut-olivier-de-serres.fr/Documents/Bon%20Commande%202021.pdf">Commander</a>
+                <a href="mailto:institutolivierdeserres@gmail.com">Mail Institut</a>
+                <a href="https://www.institut-olivier-de-serres.fr/Documents/Engagement.pdf">Engagement républicain</a>
+             </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const navMenu = document.getElementById('nav-menu');
+            const parentLinks = document.querySelectorAll('.main-nav > .container > ul > li > a');
+
+            // 1. Ouvrir/Fermer le menu hamburger
+            hamburgerBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                hamburgerBtn.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // 2. Gérer les sous-menus en version mobile
+            parentLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        const dropdown = this.nextElementSibling;
+                        if (dropdown && dropdown.classList.contains('dropdown')) {
+                            e.preventDefault();
+                            e.stopPropagation();
+
+                            document.querySelectorAll('.dropdown').forEach(drop => {
+                                if(drop !== dropdown) drop.classList.remove('open');
+                            });
+                            document.querySelectorAll('.main-nav > .container > ul > li > a').forEach(l => {
+                                if(l !== this) l.classList.remove('submenu-open');
+                            });
+
+                            dropdown.classList.toggle('open');
+                            this.classList.toggle('submenu-open');
+                        }
+                    }
+                });
+            });
+
+            document.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    hamburgerBtn.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.querySelectorAll('.dropdown').forEach(drop => drop.classList.remove('open'));
+                    document.querySelectorAll('.submenu-open').forEach(l => l.classList.remove('submenu-open'));
+                }
+            });
+        });
+
+        // ACCORDÉON MOBILE POUR LES CARTES
+        if (window.innerWidth <= 768) {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                if (index === 0) return; // Garder la première ouverte
+
+                const titleEl = card.querySelector('h1, h2, h3');
+                let titleText = titleEl ? titleEl.innerText : "En savoir plus";
+                if (titleText.length > 50) titleText = titleText.substring(0, 50) + "...";
+
+                const contentWrapper = document.createElement('div');
+                contentWrapper.className = 'card-content-wrapper';
+                while(card.firstChild) { 
+                    contentWrapper.appendChild(card.firstChild); 
+                }
+
+                const headerBar = document.createElement('div');
+                headerBar.className = 'card-title-bar';
+                headerBar.innerHTML = `<span>${titleText}</span><span class="toggle-icon">+</span>`;
+
+                card.appendChild(headerBar);
+                card.appendChild(contentWrapper);
+                card.classList.add('accordion-mode');
+
+                headerBar.addEventListener('click', () => {
+                    document.querySelectorAll('.card.accordion-mode').forEach(c => {
+                        if(c !== card) c.classList.remove('open');
+                    });
+                    
+                    card.classList.toggle('open');
+                    
+                    if (card.classList.contains('open')) {
+                        setTimeout(() => {
+                            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 50);
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
